@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<title>Program 3.1</title>
+</head>
+
+<body>
+<div id='first'>Harrison Bergman</div>
+</body>
+
+<style>
+#first {
+  width: 180px;
+  height: 220px;
+  background: #22529A;
+  color: #1D9B75;
+  padding: 10px;
+  border: 2px solid #400;
+}
+</style>
+
+<script>
+//Gets user input for rolls of the dice
+var rolls = window.prompt("How many times should we roll the dice?", 0);
+
+//Makes sure value is a positive number
+while((isNaN(rolls) == true) || rolls < 0){
+	var rolls = window.prompt("How many times should we roll the dice?", 0);
+  }
+
+//Starts out all values at 0
+var twos = 0;
+var threes = 0;
+var fours = 0;
+var fives = 0;
+var sixes = 0;
+var sevens = 0;
+var eights = 0;
+var nines = 0;
+var tens = 0;
+var elevens = 0;
+var twelves = 0;
+
+//Continues the incrementing until the amount of rolls is 0
+while(rolls != 0){
+    var dieOne = Math.ceil(Math.random()*6);
+    var dieTwo = Math.ceil(Math.random()*6);
+    var sum = dieOne + dieTwo;
+		
+    //Figures out which variable to increment
+    switch(sum){
+      case 2:
+        twos++;
+        break;
+
+      case 3:
+        threes++;
+        break;
+
+      case 4:
+        fours++;
+        break;
+
+      case 5:
+        fives++;
+        break;  
+
+      case 6:
+        sixes++;
+        break;
+
+      case 7:
+        sevens++;
+        break;
+
+      case 8:
+        eights++;
+        break;
+
+      case 9:
+        nines++;
+        break;
+
+      case 10:
+        tens++;
+        break;
+
+      case 11:
+        elevens++;
+        break;
+
+      case 12:
+        twelves++;
+    }
+
+		//Adds the chart to the screen for the user to see the distribution in sums
+    document.getElementById("first").innerHTML = "Number | Count" + "<br>" + "2  |   " + twos + "<br>" + "3 | " + threes + "<br>" + "4 | " + fours + "<br>" + "5 | " + fives + "<br>" + "6 | " + sixes + "<br>" + "7 | " + sevens + "<br>" + "8 | " + eights + "<br>" + "9 | " + nines + "<br>" + "10 | " + tens + "<br>" + "11 | " + elevens + "<br>" + "12 | " + twelves;
+    
+    
+    rolls--;
+}
+</script>
+
+</html>
